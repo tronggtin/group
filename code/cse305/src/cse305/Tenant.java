@@ -13,9 +13,6 @@ public class Tenant extends User {
         this.TenantID = tent.getTenantID();
     }
 
-    // public Tenant(UserBuilder builder) {
-    // super(builder);
-    // }
     public void setRentedProperties(ArrayList<RentalContract> rentedProperties) {
         this.rentedProperties = rentedProperties;
     }
@@ -25,20 +22,13 @@ public class Tenant extends User {
     }
 
     public List<RentalContract> getRentedProperties() {
-        return new ArrayList<>(rentedProperties); // Return a copy to prevent external modification
+        return new ArrayList<>(rentedProperties); 
     }
 
     public Tenant getTenant() {
         return this;
     }
 
-    // public void createRentalContract(Property property, int durationMonths) {
-    //
-    // RentalContract newContract = new RentalContract(property, durationMonths);
-    // rentedProperties.add(newContract);
-    //
-    // System.out.println("Rental contract created successfully.");
-    // }
     public void terminateRentalContract(RentalContract contract) {
         if (rentedProperties.contains(contract)) {
             contract.terminateContract();
